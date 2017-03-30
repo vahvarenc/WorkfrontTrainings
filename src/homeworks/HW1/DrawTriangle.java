@@ -1,4 +1,4 @@
-package homeworks;
+package homeworks.HW1;
 
 /**
  * Created by Karen on 3/18/2017.
