@@ -1,5 +1,10 @@
 package homeworks.HW2;
 
+
+import com.sun.javaws.exceptions.InvalidArgumentException;
+
+import java.security.InvalidParameterException;
+
 /**
  * Created by Vahag on 3/30/2017.
  */
@@ -10,15 +15,15 @@ public class Month {
         monthNumber = 1;
     }
 
-    public Month(int monthNumber){
+    public Month(int monthNumber) throws InvalidParameterException{
         if(monthNumber < 1 || monthNumber > 12){
-            this.monthNumber = 1;
+            throw new InvalidParameterException();
         }else{
             this.monthNumber = monthNumber;
         }
     }
 
-    public Month(String month){
+    public Month(String month) throws InvalidParameterException {
         switch (month){
             case "January":
                 monthNumber = 1;
@@ -56,12 +61,13 @@ public class Month {
             case "December":
                 monthNumber = 12;
                 break;
+            default: throw new InvalidParameterException();
         }
     }
 
-    public void setMonthNumber(int monthNumber) {
+    public void setMonthNumber(int monthNumber) throws InvalidParameterException  {
         if(monthNumber < 1 || monthNumber > 12){
-            this.monthNumber = 1;
+            throw new InvalidParameterException();
         }else{
             this.monthNumber = monthNumber;
         }
